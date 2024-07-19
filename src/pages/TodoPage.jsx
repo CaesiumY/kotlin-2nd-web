@@ -1,9 +1,9 @@
-import TodoList from "../components/TodoList";
+import TodoContainer from "../components/TodoContainer";
 
 const TodoPage = () => {
   return (
     <div>
-      <TodoList />
+      <TodoContainer />
     </div>
   );
 };

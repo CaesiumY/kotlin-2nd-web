@@ -1,28 +1,24 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { getTodos } from "../api/todos";
-
-const TodoList = () => {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    const fetchTodos = async () => {
-      const data = await getTodos();
-
-      setTodos(data);
-    };
-
-    fetchTodos();
-  }, []);
-
+const TodoList = ({ todos, removeTodo, toggleTodo }) => {
   return (
     <div>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
+            <p>id: {todo.id}</p>
             <p>title: {todo.title}</p>
             <p>userId: {todo.userId}</p>
             <p>completed: {todo.completed ? "true" : "false"}</p>
+            <button
+              onClick={() =>
+                toggleTodo({
+                  ...todo,
+                  completed: !todo.completed,
+                })
+              }
+            >
+              완료
+            </button>
+            <button onClick={() => removeTodo(todo.id)}>삭제</button>
           </li>
         ))}
       </ul>

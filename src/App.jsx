@@ -1,10 +1,13 @@
+import { MantineProvider } from "@mantine/core";
 import TodoPage from "./pages/TodoPage";
+
+import "@mantine/core/styles.css";
 
 const App = () => {
   return (
-    <div>
+    <MantineProvider>
       <TodoPage />
-    </div>
+    </MantineProvider>
   );
 };
 

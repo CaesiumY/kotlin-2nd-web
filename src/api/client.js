@@ -7,10 +7,10 @@ export const todoClient = axios.create({
   },
 });
 
-todoClient.interceptors.request.use((config) => {
-  console.log("config :>> ", config);
-});
+// todoClient.interceptors.request.use((config) => {
+//   console.log("config :>> ", config);
+// });
 
-todoClient.interceptors.response.use((response) => {
-  console.log("response :>> ", response);
-});
+// todoClient.interceptors.response.use((response) => {
+//   console.log("response :>> ", response);
+// });

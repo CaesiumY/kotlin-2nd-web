@@ -1,11 +1,11 @@
-const TodoList = ({ todos, removeTodo, toggleTodo }) => {
+const TodoList = ({ todos, removeTodo, toggleTodo, getTodoDetail }) => {
   return (
     <div>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
             <p>id: {todo.id}</p>
-            <p>title: {todo.title}</p>
+            <p onClick={() => getTodoDetail(todo.id)}>title: {todo.title}</p>
             <p>userId: {todo.userId}</p>
             <p>completed: {todo.completed ? "true" : "false"}</p>
             <button

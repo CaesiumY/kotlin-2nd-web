@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { createTodo, deleteTodo, getTodos, updateTodo } from "../api/todos";
+import {
+  createTodo,
+  deleteTodo,
+  getTodoItem,
+  getTodos,
+  updateTodo,
+} from "../api/todos";
 import TodoList from "./TodoList";
 import TodoInput from "./TodoInput";
 
@@ -36,6 +42,12 @@ const TodoContainer = () => {
     alert("Todo 수정 완료!");
   };
 
+  const getTodoDetail = async (id) => {
+    const data = await getTodoItem(id);
+
+    alert(`Todo 상세 정보: ${JSON.stringify(data)}`);
+  };
+
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -43,7 +55,12 @@ const TodoContainer = () => {
   return (
     <div>
       <TodoInput addTodo={addTodo} />
-      <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+      <TodoList
+        todos={todos}
+        removeTodo={removeTodo}
+        toggleTodo={toggleTodo}
+        getTodoDetail={getTodoDetail}
+      />
     </div>
   );
 };

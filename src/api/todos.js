@@ -6,6 +6,12 @@ export const getTodos = async () => {
   return response.data;
 };
 
+export const getTodoItem = async (id) => {
+  const response = await todoClient.get(`/todos/${id}`);
+
+  return response.data;
+};
+
 export const createTodo = async (todo) => {
   const response = await todoClient.post("/todos", todo);
 

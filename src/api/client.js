@@ -14,3 +14,10 @@ export const todoClient = axios.create({
 // todoClient.interceptors.response.use((response) => {
 //   console.log("response :>> ", response);
 // });
+
+export const authClient = axios.create({
+  baseURL: import.meta.env.VITE_AUTH_URL,
+  headers: {
+    "Access-Control-Allow-Origin": "*", // CORS
+  },
+});

@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+import Header from "../../components/layout/Header";
 
 const RootLayout = () => {
   const token = localStorage.getItem("token");
@@ -7,7 +8,12 @@ const RootLayout = () => {
     return <Navigate to="/login" />;
   }
 
-  return <Outlet />;
+  return (
+    <main>
+      <Header />
+      <Outlet />
+    </main>
+  );
 };
 
 export default RootLayout;

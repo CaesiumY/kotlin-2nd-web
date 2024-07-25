@@ -5,6 +5,7 @@ import LoginLayout from "./pages/layout/LoginLayout";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import RedirectPage from "./pages/RedirectPage";
+import UploadPage from "./pages/UploadPage";
 
 export const router = createBrowserRouter([
   {
@@ -34,5 +35,9 @@ export const router = createBrowserRouter([
   {
     path: "/redirect",
     element: <RedirectPage />,
+  },
+  {
+    path: "/upload",
+    element: <UploadPage />,
   },
 ]);

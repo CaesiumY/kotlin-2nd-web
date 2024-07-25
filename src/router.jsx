@@ -4,6 +4,7 @@ import TodoPage from "./pages/TodoPage";
 import LoginLayout from "./pages/layout/LoginLayout";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import RedirectPage from "./pages/RedirectPage";
 
 export const router = createBrowserRouter([
   {
@@ -29,5 +30,9 @@ export const router = createBrowserRouter([
         element: <RegisterPage />,
       },
     ],
+  },
+  {
+    path: "/redirect",
+    element: <RedirectPage />,
   },
 ]);
